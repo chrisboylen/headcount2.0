@@ -1,5 +1,4 @@
-import React from 'react';
-import kinderData from './data/kindergartners_in_full_day_program.js';
+import kinderData from './data/kindergartners_in_full_day_program';
 
 
 export default class DistrictRepository {
@@ -12,7 +11,7 @@ export default class DistrictRepository {
       let newLocation = location.Location.toUpperCase();
       let newData = Math.round(location.Data * 1000) / 1000
 
-      if (!acc[location.Location]) {
+      if (!acc[newLocation]) {
         acc[newLocation] = {
           location: newLocation,
           stats: {}
@@ -25,9 +24,17 @@ export default class DistrictRepository {
   }
 
   findByName = (name) => {
-    if (!name) {
-      return undefined
-    }
+    if (name) {
       return this.stats[name.toUpperCase()]    
+    }
+  }
+
+  findAllMatches = (name) => {
+    const statValues = Object.values(this.stats);
+      if (name) {
+        return statValues.filter(value => value.location.includes(name.toUpperCase()))
+      } else {
+        return statValues
+      }
   }
 }
