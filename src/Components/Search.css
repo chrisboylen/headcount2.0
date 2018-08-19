@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 2em 0;
+}
+
+input {
+  background-color: #355053;
+  border: solid 4px #f7b488;
+  ;
+  border-radius: 7px;
+  color: #f7b488;
+  font-size: 2em;
+  height: 2em;
+  width: 20em;
+  margin: auto;
+  padding: 0 1em 0 1em;
+}
+
+input:focus {
+  outline: none;
+}
