@@ -4,6 +4,10 @@ html {
   font-size: 62.5%;
 }
 
+header {
+  margin: auto;
+}
+
 h1 {
   color: #f7b488;
   font-size: 3.5em;

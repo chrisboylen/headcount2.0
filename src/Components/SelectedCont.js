@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import './SelectedCont.css';
 import PropTypes from 'prop-types';
 
 const SelectedCont = ({ selectedCards, selectCard, compareDistrictAverages }) => {
@@ -22,9 +23,9 @@ const SelectedCont = ({ selectedCards, selectCard, compareDistrictAverages }) =>
       <div className="compare-cont">
         {displaySelectedCards[0]}
         <div className="compare-info">
-          <h2>{location1}{comparedData[location1]}</h2>
-          <h2>{comparedData.compared}</h2>
-          <h2>{location2}{comparedData[location2]}</h2>
+          <h2>{location1} : {comparedData[location1]}</h2>
+          <h2><span>Compared Average</span>{comparedData.compared}</h2>
+          <h2>{location2} : {comparedData[location2]}</h2>
         </div>
         {displaySelectedCards[1]}
       </div>
