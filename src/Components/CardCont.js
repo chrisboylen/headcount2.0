@@ -3,12 +3,14 @@ import Card from './Card';
 import PropTypes from 'prop-types';
 import './CardCont.css';
 
-const CardCont = ({ data }) => {
+const CardCont = ({ data, selectCard, comparedData, compareSelectedCards }) => {
   const displayDistrictCards = Object.values(data).map((district, i) => {
-    return <Card  location={ district.location }
+    return  <Card location={ district.location }
                   stats={ district.stats }
+                  isSelected={ district.isSelected }
                   key={ `card-${i}` }
-    />
+                  selectCard={selectCard}
+            />
   })
 
   return (

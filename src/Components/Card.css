@@ -8,6 +8,11 @@
   padding: 0 1em 1em 1em;
 }
 
+.selected {
+  background-color: #5e7377;
+  border: solid 4px #f7b488;
+}
+
 h2 {
   font-size: 2em;
   margin: .5em;
