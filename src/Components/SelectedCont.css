@@ -1,0 +1,33 @@
+.compare-cont {
+  background-color: #3c5354;
+  border-radius: 20px;
+  box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, .7);
+  display: flex;
+  padding: 2em 1em 0 1em;
+  margin: 2em;
+}
+
+.compare-info {
+  align-items: center;
+  background-color: #f7b488;
+  border-radius: 15px;
+  box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, .7);
+  color: #2a393a;
+  display: flex;
+  flex: 1 18em;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0 2em 2em 2em;
+  padding: 0 1em 1em 1em;
+}
+
+h2 {
+  font-size: 2em;
+  margin: .5em;
+  text-align: center;
+}
+ 
+span {
+  display: block;
+}
