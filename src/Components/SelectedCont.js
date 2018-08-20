@@ -43,7 +43,9 @@ const SelectedCont = ({ selectedCards, selectCard, compareDistrictAverages }) =>
 }
 
 SelectedCont.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  selectCard: PropTypes.func, 
+  compareDistrictAverages: PropTypes.func
 }
 
 export default SelectedCont;
