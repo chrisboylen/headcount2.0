@@ -12,34 +12,4 @@ describe('SELECTEDCONT', () => {
 
     expect(wrapper.html()).toMatchSnapshot();
   })
-  
-  it('Should match snapshot when there is data in the array', () => {
-    const mockData = [
-      {
-        location: 'COLORADO',
-        isSelected: true,
-        stats: {
-          2002: 1
-        }, 
-      },
-      {
-        location: 'BINGO',
-        isSelected: true,
-        stats: {
-          2002: 1
-        }
-      }
-    ];
-    
-    const compareDistrictAveragesMock = jest.fn()
-
-    const wrapper = shallow(
-      <SelectedCont 
-        selectedCards={mockData} 
-        compareDistrictAverages={compareDistrictAveragesMock}
-      />
-    );
-
-    expect(wrapper.html()).toMatchSnapshot();
-  })
 })
