@@ -13,7 +13,7 @@ describe('CARD', () => {
     );
     
     expect(wrapper.html()).toMatchSnapshot();
-  })
+  });
 
   it('Should have class of less-than if data is < .5', () => {
     const wrapper = shallow(
@@ -24,9 +24,9 @@ describe('CARD', () => {
       />
     );
 
-    expect(wrapper.find('div').is('.less-than')).toEqual(true)
-    expect(wrapper.find('div').is('.stat')).toEqual(true)
-  })
+    expect(wrapper.find('div').is('.less-than')).toEqual(true);
+    expect(wrapper.find('div').is('.stat')).toEqual(true);
+  });
 
   it('Should not have class of less-than if data is >= .5', () => {
     const wrapper = shallow(
@@ -37,9 +37,9 @@ describe('CARD', () => {
       />
     );
 
-    expect(wrapper.find('div').is('.less-than')).toEqual(false)
-    expect(wrapper.find('div').is('.stat')).toEqual(true)
-  })
+    expect(wrapper.find('div').is('.less-than')).toEqual(false);
+    expect(wrapper.find('div').is('.stat')).toEqual(true);
+  });
 
   it('Should have a class of selected if isSelected is true', () => {
     const wrapper = shallow(
@@ -53,7 +53,7 @@ describe('CARD', () => {
 
     expect(wrapper.find('ul').is('.card')).toEqual(true);
     expect(wrapper.find('ul').is('.selected')).toEqual(true);
-  })
+  });
 
   it('Should not have a class of selected if isSelected is false', () => {
     const wrapper = shallow(
@@ -67,7 +67,7 @@ describe('CARD', () => {
 
     expect(wrapper.find('ul').is('.card')).toEqual(true);
     expect(wrapper.find('ul').is('.selected')).toEqual(false);
-  })
+  });
 
   it('Should invoke selectCard onclick', () => {
     const selectCardMock = jest.fn();
@@ -83,6 +83,6 @@ describe('CARD', () => {
 
     wrapper.find('.card').simulate('click');
 
-    expect(selectCardMock).toHaveBeenCalled()
-  })
-})
+    expect(selectCardMock).toHaveBeenCalled();
+  });
+});
