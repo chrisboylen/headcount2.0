@@ -13,17 +13,17 @@ class App extends Component {
     this.state = {
       data: [],
       selectedCards: [] 
-    }
+    };
   }
 
   componentDidMount() {
-    this.updateCards()
+    this.updateCards();
   }
 
   updateCards = (input) => {
     const data = this.districtRepo.findAllMatches(input);
 
-    this.setState({ data })
+    this.setState({ data });
   }
 
   selectCard = (input) => {
@@ -31,18 +31,18 @@ class App extends Component {
     const selectedCards = [...this.state.selectedCards, foundCard];
     
     if (this.state.selectedCards.includes(foundCard)) {
-      this.deselectCard(foundCard.location)
+      this.deselectCard(foundCard.location);
 
-      foundCard.isSelected = !foundCard.isSelected
-      return
+      foundCard.isSelected = !foundCard.isSelected;
+      return;
     }
     
     if (this.state.selectedCards.length === 2) {
       const deselectedCard = selectedCards.shift();
-      deselectedCard.isSelected = false
+      deselectedCard.isSelected = false;
     } 
-    this.setState({ selectedCards })
-    foundCard.isSelected = !foundCard.isSelected
+    this.setState({ selectedCards });
+    foundCard.isSelected = !foundCard.isSelected;
   }
 
   deselectCard = (location) => {
@@ -50,7 +50,7 @@ class App extends Component {
       card.location !== location
     );
 
-    this.setState({ selectedCards })
+    this.setState({ selectedCards });
   }
    
   render() {

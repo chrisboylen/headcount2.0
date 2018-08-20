@@ -9,13 +9,13 @@ class Search extends Component {
         <input  
           type="text"
           placeholder="Search"
-          onChange={ (e) => this.props.updateCards(e.target.value) }
+          onChange={ (event) => this.props.updateCards(event.target.value) }
         />
       </form>
-    )
+    );
   }
 }
 
-Search.propTypes = { updateCards: PropTypes.func }
+Search.propTypes = { updateCards: PropTypes.func };
 
 export default Search;

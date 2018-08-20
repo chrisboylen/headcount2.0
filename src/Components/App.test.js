@@ -1,34 +1,32 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from './App';
-import DistrictRepository from '../helper';
-import kinderData from '../data/kindergartners_in_full_day_program';
 
 describe('APP', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(<App />);
-  })
+  });
 
   it('Should exist', () => {
     expect(wrapper).toBeDefined();
-  })
+  });
 
   it('Should match the snapshot', () => {
     expect(wrapper.html()).toMatchSnapshot();
-  })
+  });
 
   it('Should have a default state of data and selectedCards of empty arrays', () => {
     expect(wrapper.state().data.length).toEqual(0);
     expect(wrapper.state().selectedCards.length).toEqual(0);
-  })
+  });
 
   it('Should setState with all data when updateCards is invoked without a parameter', () => {
     wrapper.instance().updateCards();
 
     expect(wrapper.state().data.length).toEqual(181);
-  })
+  });
 
   it('Should update state with correct data data when updateCards is invoked with a parameter', () => {
     const mockData = 'COLORADO';
@@ -67,10 +65,10 @@ describe('APP', () => {
     wrapper.instance().updateCards(mockData);
     expect(wrapper.state().data).toEqual(expected);
     expect(wrapper.state().data.length).toEqual(2);
-  })
+  });
 
   it('Should update state when selectCard is invoked', () => {
-    const mockData = 'COLORADO'
+    const mockData = 'COLORADO';
     const expected = [{
       "location": "COLORADO",
       "isSelected": true,
@@ -89,11 +87,11 @@ describe('APP', () => {
       }
     }];
 
-    wrapper.instance().selectCard(mockData)
+    wrapper.instance().selectCard(mockData);
 
     expect(wrapper.state().selectedCards).toEqual(expected);
     expect(wrapper.state().selectedCards.length).toEqual(1);
-  })
+  });
 
   it('Should update state when selectCard is invoked twice', () => {
     const mockData = 'COLORADO';
@@ -116,34 +114,34 @@ describe('APP', () => {
       }
     },
     {
-     "location": "ASPEN 1",
+      "location": "ASPEN 1",
       "isSelected": true,
-        "stats": {
-          "2004": 1,
-          "2005": 1,
-          "2006": 1,
-          "2007": 1,
-          "2008": 1,
-          "2009": 1,
-          "2010": 1,
-          "2011": 1,
-          "2012": 1,
-          "2013": 1,
-          "2014": 0.992,
-        },
+      "stats": {
+        "2004": 1,
+        "2005": 1,
+        "2006": 1,
+        "2007": 1,
+        "2008": 1,
+        "2009": 1,
+        "2010": 1,
+        "2011": 1,
+        "2012": 1,
+        "2013": 1,
+        "2014": 0.992
+      }
     }];
 
-    wrapper.instance().selectCard(mockData)
-    wrapper.instance().selectCard(mockData2)
+    wrapper.instance().selectCard(mockData);
+    wrapper.instance().selectCard(mockData2);
 
     expect(wrapper.state().selectedCards).toEqual(expected);
     expect(wrapper.state().selectedCards.length).toEqual(2);
     expect(wrapper.state().selectedCards[0].isSelected).toBe(true);
     expect(wrapper.state().selectedCards[1].isSelected).toBe(true);
-  })
+  });
 
   it('Should remove first element and add to the end when length is two and selectCard is invoked', () => {
-    const mockData = "AGATE 300"
+    const mockData = "AGATE 300";
     const expected = [
       {
         "location": "ASPEN 1",
@@ -159,7 +157,7 @@ describe('APP', () => {
           "2011": 1,
           "2012": 1,
           "2013": 1,
-          "2014": 0.992,
+          "2014": 0.992
         }
       },
       {
@@ -178,7 +176,7 @@ describe('APP', () => {
           "2013": 1,
           "2014": 1
         }
-    }];
+      }];
 
     wrapper.setState({selectedCards: [{
       "location": "COLORADO",
@@ -198,23 +196,23 @@ describe('APP', () => {
       }
     },
     {
-     "location": "ASPEN 1",
+      "location": "ASPEN 1",
       "isSelected": true,
-        "stats": {
-          "2004": 1,
-          "2005": 1,
-          "2006": 1,
-          "2007": 1,
-          "2008": 1,
-          "2009": 1,
-          "2010": 1,
-          "2011": 1,
-          "2012": 1,
-          "2013": 1,
-          "2014": 0.992,
-        },
+      "stats": {
+        "2004": 1,
+        "2005": 1,
+        "2006": 1,
+        "2007": 1,
+        "2008": 1,
+        "2009": 1,
+        "2010": 1,
+        "2011": 1,
+        "2012": 1,
+        "2013": 1,
+        "2014": 0.992
+      }
     }]
-  });
+    });
 
     wrapper.instance().selectCard(mockData);
 
@@ -222,7 +220,7 @@ describe('APP', () => {
     expect(wrapper.state().selectedCards.length).toEqual(2);
     expect(wrapper.state().selectedCards[0].isSelected).toBe(true);
     expect(wrapper.state().selectedCards[1].isSelected).toBe(true);
-  })
+  });
 
   it('Should mark isSelected false if selectCard is invoked on the same card twice', () => {
     wrapper = mount(<App />);
@@ -243,9 +241,9 @@ describe('APP', () => {
         "2012": 0.695,
         "2013": 0.703,
         "2014": 0.741
-        }
-      }],
-      selectedCards: []
+      }
+    }],
+    selectedCards: []
     });
 
     wrapper.instance().selectCard('COLORADO');
@@ -258,5 +256,5 @@ describe('APP', () => {
 
     expect(wrapper.state().selectedCards).toEqual(expected);
     expect(wrapper.state().data[0].isSelected).toBe(false);
-  })
-})
+  });
+});

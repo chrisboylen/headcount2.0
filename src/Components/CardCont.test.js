@@ -7,7 +7,7 @@ describe('CARDCONT', () => {
     const wrapper = shallow(<CardCont data={[]} />);
 
     expect(wrapper.html()).toMatchSnapshot();
-  })
+  });
 
   it('Should match snapshot when there is data in the array', () => {
     const mockData = [
@@ -37,5 +37,5 @@ describe('CARDCONT', () => {
       <CardCont data={mockData} />);
 
     expect(wrapper.html()).toMatchSnapshot();
-  })
-})
+  });
+});
