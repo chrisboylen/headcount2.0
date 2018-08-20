@@ -222,7 +222,6 @@ describe('APP', () => {
     expect(wrapper.state().selectedCards.length).toEqual(2);
     expect(wrapper.state().selectedCards[0].isSelected).toBe(true);
     expect(wrapper.state().selectedCards[1].isSelected).toBe(true);
-    // expect(wrapper.state().data[0].isSelected).toBe(false);
   })
 
   it('Should mark isSelected false if selectCard is invoked on the same card twice', () => {
@@ -250,7 +249,7 @@ describe('APP', () => {
     });
 
     wrapper.instance().selectCard('COLORADO');
-    
+
     expect(wrapper.state().selectedCards.length).toEqual(1);
     expect(wrapper.state().selectedCards).not.toBe(expected);
     expect(wrapper.state().selectedCards[0].isSelected).toBe(true);
@@ -260,5 +259,4 @@ describe('APP', () => {
     expect(wrapper.state().selectedCards).toEqual(expected);
     expect(wrapper.state().data[0].isSelected).toBe(false);
   })
-
 })

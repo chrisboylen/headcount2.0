@@ -40,4 +40,18 @@ describe('CARD', () => {
     expect(wrapper.find('div').is('.less-than')).toEqual(false)
     expect(wrapper.find('div').is('.stat')).toEqual(true)
   })
+
+  it('Should have a class of selected if isSelected is true', () => {
+    const wrapper = shallow(
+      <Card
+        location='COLORADO'
+        stats={{ 2004: .499 }}
+        isSelected={true}
+        key={1}
+      />
+    );
+
+    expect(wrapper.find('ul').is('.card')).toEqual(true);
+    expect(wrapper.find('ul').is('.selected')).toEqual(true);
+  })
 })
