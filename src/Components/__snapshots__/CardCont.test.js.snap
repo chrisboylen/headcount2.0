@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CARDCONT Should invoke displayDistrictCards 1`] = `"<article class=\\"card-cont\\"><ul class=\\"card  \\"><h2>COLORADO</h2><li><div class=\\"stat\\">2002 : 1</div><div class=\\"stat\\">2003 : 6</div><div class=\\"stat\\">2004 : 8</div><div class=\\"stat less-than\\">2005 : 0</div></li></ul><ul class=\\"card  \\"><h2>BINGO</h2><li><div class=\\"stat\\">2002 : 1</div><div class=\\"stat\\">2004 : 8</div><div class=\\"stat\\">2007 : 6</div><div class=\\"stat less-than\\">2009 : 0</div></li></ul></article>"`;
+exports[`CARDCONT Should match snapshot when there is an empty array 1`] = `"<article class=\\"card-cont\\"></article>"`;
 
-exports[`CARDCONT Should match snapshot 1`] = `"<article class=\\"card-cont\\"></article>"`;
+exports[`CARDCONT Should match snapshot when there is data in the array 1`] = `"<article class=\\"card-cont\\"><ul class=\\"card  \\"><h2>COLORADO</h2><li><div class=\\"stat\\">2002 : 1</div><div class=\\"stat\\">2003 : 6</div><div class=\\"stat\\">2004 : 8</div><div class=\\"stat less-than\\">2005 : 0</div></li></ul><ul class=\\"card  \\"><h2>BINGO</h2><li><div class=\\"stat\\">2002 : 1</div><div class=\\"stat\\">2004 : 8</div><div class=\\"stat\\">2007 : 6</div><div class=\\"stat less-than\\">2009 : 0</div></li></ul></article>"`;

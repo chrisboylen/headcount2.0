@@ -1,23 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CardCont from './CardCont';
-import Card from './Card';
 
 describe('CARDCONT', () => {
-  it('Should match snapshot', () => {
-    const wrapper = shallow(
-      <CardCont data={[]} />);
-    //   <Card 
-    //     location='COLORADO'
-    //     stats={{key: 1}}
-    //     key={1}
-    //   />
-    // );
+  it('Should match snapshot when there is an empty array', () => {
+    const wrapper = shallow(<CardCont data={[]} />);
 
     expect(wrapper.html()).toMatchSnapshot();
   })
 
-  it('Should invoke displayDistrictCards', () => {
+  it('Should match snapshot when there is data in the array', () => {
     const mockData = [
       {
         location: 'COLORADO',
