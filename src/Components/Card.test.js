@@ -68,4 +68,21 @@ describe('CARD', () => {
     expect(wrapper.find('ul').is('.card')).toEqual(true);
     expect(wrapper.find('ul').is('.selected')).toEqual(false);
   })
+
+  it('Should invoke selectCard onclick', () => {
+    const selectCardMock = jest.fn();
+    const wrapper = shallow(
+      <Card 
+        location='COLORADO'
+        stats={{ 2004: .499 }}
+        isSelected={false}
+        key={1}
+        selectCard={selectCardMock} 
+      />
+    );
+
+    wrapper.find('.card').simulate('click');
+
+    expect(selectCardMock).toHaveBeenCalled()
+  })
 })
