@@ -14,4 +14,4 @@ You can begin running your tests with `npm test`
 
 ## Project Goals
 
-(/Screenshot 2018-08-20 07.12.18.png)
+<img src="/Screenshot 2018-08-20 07.12.18.png">
