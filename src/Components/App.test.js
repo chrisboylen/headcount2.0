@@ -138,6 +138,8 @@ describe('APP', () => {
 
     expect(wrapper.state().selectedCards).toEqual(expected);
     expect(wrapper.state().selectedCards.length).toEqual(2);
+    expect(wrapper.state().selectedCards[0].isSelected).toBe(true);
+    expect(wrapper.state().selectedCards[1].isSelected).toBe(true);
   })
 
   it('Should remove first element and add to the end when length is two and selectCard is invoked', () => {
@@ -212,12 +214,51 @@ describe('APP', () => {
           "2014": 0.992,
         },
     }]
-  })
+  });
 
     wrapper.instance().selectCard(mockData);
 
     expect(wrapper.state().selectedCards).toEqual(expected);
     expect(wrapper.state().selectedCards.length).toEqual(2);
+    expect(wrapper.state().selectedCards[0].isSelected).toBe(true);
+    expect(wrapper.state().selectedCards[1].isSelected).toBe(true);
+    // expect(wrapper.state().data[0].isSelected).toBe(false);
+  })
+
+  it('Should mark isSelected false if selectCard is invoked on the same card twice', () => {
+    wrapper = mount(<App />);
+    const expected = [];
+
+    wrapper.setState({data: [{
+      "location": "COLORADO",
+      "isSelected": false,
+      "stats": {
+        "2004": 0.24,
+        "2005": 0.278,
+        "2006": 0.337,
+        "2007": 0.395,
+        "2008": 0.536,
+        "2009": 0.598,
+        "2010": 0.64,
+        "2011": 0.672,
+        "2012": 0.695,
+        "2013": 0.703,
+        "2014": 0.741
+        }
+      }],
+      selectedCards: []
+    });
+
+    wrapper.instance().selectCard('COLORADO');
+    
+    expect(wrapper.state().selectedCards.length).toEqual(1);
+    expect(wrapper.state().selectedCards).not.toBe(expected);
+    expect(wrapper.state().selectedCards[0].isSelected).toBe(true);
+
+    wrapper.instance().selectCard('COLORADO');
+
+    expect(wrapper.state().selectedCards).toEqual(expected);
+    expect(wrapper.state().data[0].isSelected).toBe(false);
   })
 
 })
