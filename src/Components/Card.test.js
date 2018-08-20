@@ -54,4 +54,18 @@ describe('CARD', () => {
     expect(wrapper.find('ul').is('.card')).toEqual(true);
     expect(wrapper.find('ul').is('.selected')).toEqual(true);
   })
+
+  it('Should not have a class of selected if isSelected is false', () => {
+    const wrapper = shallow(
+      <Card
+        location='COLORADO'
+        stats={{ 2004: .499 }}
+        isSelected={false}
+        key={1}
+      />
+    );
+
+    expect(wrapper.find('ul').is('.card')).toEqual(true);
+    expect(wrapper.find('ul').is('.selected')).toEqual(false);
+  })
 })
